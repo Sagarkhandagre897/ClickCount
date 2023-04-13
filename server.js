@@ -12,7 +12,7 @@ app.use(express.static('public'));
 // connect to the db and start express server
 let db;
 
-const url = "mongodb://localhost:27017";
+const url = "mongodb+srv://click-counts:6mt-ywsT*hqZtrM@cluster0.4os8zzo.mongodb.net/CountDB?retryWrites=true&w=majority";
 
 MongoClient.connect(url, { connectTimeoutMS: 5000,
     socketTimeoutMS: 5000,
@@ -22,7 +22,7 @@ MongoClient.connect(url, { connectTimeoutMS: 5000,
   if (err) {
     return console.log(err);
   }
-  db = client.db("ClickCounts");
+  db = client.db("CountDB");
   // start the express web server listening on 8080
 
   const PORT  = process.env.PORT || 8080;
